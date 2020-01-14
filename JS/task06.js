@@ -1,10 +1,10 @@
-document.getElementById("validation-input").onblur = function() {
-  console.log(this.value.length);
-  if (this.getAttribute('data-length') > this.value.length) { 
-    this.classList.remove('valid');
-    this.classList.add('invalid');
+const input = document.querySelector("#validation-input");
+input.onblur = function() {
+  if (String(input.value.length) === input.dataset.length) {
+    input.classList.add("valid");
+    input.classList.remove('invalid')
   } else {
-    this.classList.remove('invalid');
-    this.classList.add('valid');
+    input.classList.add("invalid");
+    input.classList.remove("valid")
   }
 };
